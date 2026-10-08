@@ -4,15 +4,10 @@ class Solution:
         left = 0
         right = len(people) - 1
         boats = 0
-        while (left < right): 
+        while (left <= right): 
             calc = sortL[left] + sortL[right]
-            if (calc > limit):
-                boats += 1
-                right -= 1
-            else:
-                boats += 1
+            if (calc <= limit):
                 left += 1
-                right -= 1
-        if (left == right):
             boats += 1
+            right -= 1
         return boats
