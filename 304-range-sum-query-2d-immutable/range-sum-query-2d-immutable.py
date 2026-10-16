@@ -1,14 +1,16 @@
 class NumMatrix:
 
     def __init__(self, matrix: list[list[int]]):
-        self.matrix = matrix
-        self.n = len(self.matrix)
-        self.m = len(self.matrix[0])
-        self.preSum = [[0] * self.m for _ in range(self.n)]
+        if not matrix or not matrix[0]:
+            self.preSum = [[0]]
+            return
+        n = len(matrix)
+        m = len(matrix[0])
+        self.preSum = [[0] * m for _ in range(n)]
 
-        for i in range(self.n):
-            for j in range(self.m):
-                self.preSum[i][j] = self.matrix[i][j]
+        for i in range(n):
+            for j in range(m):
+                self.preSum[i][j] = matrix[i][j]
                 if (i > 0): self.preSum[i][j] += self.preSum[i-1][j]
                 if (j > 0): self.preSum[i][j] += self.preSum[i][j-1]
                 if (i > 0) and (j > 0): 
