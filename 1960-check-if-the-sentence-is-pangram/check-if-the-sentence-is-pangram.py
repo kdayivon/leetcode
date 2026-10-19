@@ -1,0 +1,4 @@
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        alphabet = "abcdefghijklmnopqrstuvwxyz"
+        return len(set(sentence)) == len(alphabet)
