@@ -8,7 +8,7 @@ class Solution:
             total += num
             if (total - k) in cnt_dict:
                 res += cnt_dict[total - k]
-            cnt_dict[total] = 1 + cnt_dict.get(total, 0)
+            cnt_dict[total] = cnt_dict.get(total, 0) + 1
         
         return res
 
