@@ -3,7 +3,6 @@ class MinStack:
     def __init__(self):
         self.w = []
         self.w_min = []
-        self.min = float("inf")
 
     def push(self, value: int) -> None:
         self.w.append(value)
